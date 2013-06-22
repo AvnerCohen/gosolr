@@ -1,0 +1,3 @@
+go build github.com/AvnerCohen/gosolr
+go install github.com/AvnerCohen/gosolr
+go run main.go

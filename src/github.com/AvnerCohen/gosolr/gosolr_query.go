@@ -5,8 +5,6 @@ import "net/http"
 import "net/url"
 
 
-
-
 func ExecuteQuery(options map[string]string)  (*http.Response, error)  {
   var query string
 
@@ -14,7 +12,7 @@ func ExecuteQuery(options map[string]string)  (*http.Response, error)  {
     query += key + ":" + url.QueryEscape(value) +" "
   }
 
-  conn := "http://localhost:8983/solr/collection1/select?%s&wt=json&indent=true"
+  conn := "http://localhost:8983/solr/collection1/select?q=%s&wt=json&indent=true"
   url :=  fmt.Sprintf(conn, query)
   fmt.Println(url)
   return  http.Get(url)
